@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FUnIE-GAN Underwater Image Enhancement Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff;
+        }
+        .header {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 30px;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 200px;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .metric-label {
+            font-size: 1em;
+            color: #666;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .image-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .image-label {
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+            color: #003366;
+        }
+        .image-metric {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>FUnIE-GAN Underwater Image Enhancement</h1>
+        <p>AI-powered solution for enhancing underwater imagery for maritime security</p>
+    </div>
+
+    <div class="metrics">
+        <div class="metric-card">
+            <div class="metric-value">0.7902</div>
+            <div class="metric-label">Average SSIM</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value">23.25</div>
+            <div class="metric-label">Average PSNR (dB)</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value">890</div>
+            <div class="metric-label">Images Processed</div>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; color: #003366;">Sample Results</h2>
+    
+    <div class="image-gallery">
+        <div class="image-card">
+            <div class="image-label">Original Image</div>
+            <img src="data/test/A/100_img_.png" alt="Original">
+            <div class="image-metric">File: 100_img_.png</div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image-label">Enhanced Image</div>
+            <img src="data/output/100_img_.png" alt="Enhanced">
+            <div class="image-metric">SSIM: 0.7865 | PSNR: 20.81 dB</div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image-label">Original Image</div>
+            <img src="data/test/A/101_img_.png" alt="Original">
+            <div class="image-metric">File: 101_img_.png</div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image-label">Enhanced Image</div>
+            <img src="data/output/101_img_.png" alt="Enhanced">
+            <div class="image-metric">SSIM: 0.8831 | PSNR: 28.63 dB</div>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; color: #003366; margin-top: 40px;">System Information</h2>
+    
+    <div style="background: white; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 800px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h3>Model Details</h3>
+        <ul>
+            <li><strong>Architecture:</strong> FUnIE-GAN (Fast Underwater Image Enhancement GAN)</li>
+            <li><strong>Generator:</strong> 5-layer U-Net based architecture</li>
+            <li><strong>Discriminator:</strong> 4-layer Markovian discriminator</li>
+            <li><strong>Loss Functions:</strong> Adversarial loss + Perceptual loss (VGG-based) + L1 loss</li>
+            <li><strong>Input Resolution:</strong> 256×256 pixels</li>
+        </ul>
+        
+        <h3>Performance Metrics</h3>
+        <ul>
+            <li><strong>Processing Speed:</strong> ~25+ FPS on edge devices (as reported in paper)</li>
+            <li><strong>Model Size:</strong> Lightweight for deployment on AUVs/ROVs</li>
+            <li><strong>Enhancement Capabilities:</strong> Color correction, haze removal, contrast enhancement</li>
+        </ul>
+        
+        <h3>Maritime Security Applications</h3>
+        <ul>
+            <li><strong>Threat Detection:</strong> Enhanced visibility for identifying submarines, mines, drones, divers</li>
+            <li><strong>Navigation:</strong> Improved underwater scene understanding for autonomous vehicles</li>
+            <li><strong>Surveillance:</strong> Real-time monitoring of maritime boundaries</li>
+            <li><strong>Search & Rescue:</strong> Better visibility for locating objects/persons underwater</li>
+        </ul>
+    </div>
+</body>
+</html>
